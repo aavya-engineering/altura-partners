@@ -1,5 +1,5 @@
 # Preview/temp artifacts
-_preview*.png
-_light_preview.html
+_*.png
+_*.html
 .DS_Store
 Thumbs.db

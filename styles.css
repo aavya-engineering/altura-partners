@@ -1,7 +1,7 @@
 /* ===== Altura Partners — landing page ===== */
 :root{
   --bg:#0a1326;
-  --bg-deep:#050a16;
+  --bg-deep:#03091b;
   --bg-black:#02050c;
   --card:#0e1a33;
   --card-2:#101d39;
@@ -12,8 +12,9 @@
   --accent:#7fd8ef;
   --accent-2:#4aa6d8;
   --maxw:1280px;
-  --display:"Space Grotesk", system-ui, sans-serif;
-  --body:"Inter", system-ui, sans-serif;
+  /* Figma: headings = Humanist 521 Ultra (900) -> Mulish 900 fallback; body = Helvetica */
+  --display:"Mulish", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --body:"Helvetica Neue", Helvetica, Arial, "Mulish", sans-serif;
 }
 
 *{box-sizing:border-box;margin:0;padding:0}
@@ -30,11 +31,11 @@ a{color:inherit;text-decoration:none}
 .container{max-width:var(--maxw);margin:0 auto;padding:0 40px;width:100%}
 
 .grad{
-  background:linear-gradient(90deg,#6fd0e8,#9fe3f2);
+  background:linear-gradient(90deg,#84bdcb,#a9d6df);
   -webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;color:transparent;
 }
-.display{font-family:var(--display);font-weight:700;letter-spacing:-.01em;line-height:1.04}
+.display{font-family:var(--display);font-weight:900;letter-spacing:-.01em;line-height:1.05}
 .eyebrow{
   display:inline-block;font-size:.72rem;letter-spacing:.22em;
   color:var(--muted-2);font-weight:600;margin-bottom:22px;text-transform:uppercase;
@@ -90,22 +91,27 @@ html[data-theme="light"] .theme-toggle .icon-moon{display:none}
 /* ===== Hero ===== */
 .hero{
   position:relative;background:var(--bg-deep);overflow:hidden;
-  min-height:560px;display:flex;align-items:center;
+  min-height:800px;display:flex;align-items:center;
 }
-.hero-inner{position:relative;z-index:2;padding-top:90px;padding-bottom:110px}
-.hero-copy{max-width:640px}
+.hero-inner{position:relative;z-index:3;padding-top:80px;padding-bottom:110px}
+.hero-copy{max-width:680px}
+.hero-eyebrow{
+  display:inline-block;font-family:var(--body);font-weight:400;
+  font-size:1.18rem;letter-spacing:.01em;color:#eef3fa;margin-bottom:22px;
+}
 .hero h1{
-  font-family:var(--display);font-weight:700;
-  font-size:clamp(2.4rem,5.2vw,4.1rem);line-height:1.05;letter-spacing:-.02em;
+  font-family:var(--display);font-weight:900;
+  font-size:clamp(2.3rem,4.6vw,3.25rem);line-height:1.12;letter-spacing:-.015em;
 }
-.hero-sub{margin:26px 0 36px;color:var(--muted);font-size:1.05rem;max-width:440px}
+.hero-sub{margin:26px 0 38px;color:#aab6c9;font-size:1.18rem;max-width:520px;line-height:1.5}
+.hero-btn{padding:15px 30px}
 .hero-graphic{
-  position:absolute;top:0;right:0;bottom:0;width:60%;z-index:1;pointer-events:none;
+  position:absolute;top:0;right:0;bottom:0;width:68%;z-index:1;pointer-events:none;
+  background:url("assets/hero-bg.png") right top / contain no-repeat;
 }
-.hero-graphic svg{width:100%;height:100%;display:block}
 .hero::after{
-  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
-  background:linear-gradient(90deg,var(--bg-deep) 28%,transparent 75%);
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:linear-gradient(90deg,var(--bg-deep) 26%,rgba(3,9,27,0) 68%);
 }
 
 /* ===== Generic section ===== */
@@ -142,10 +148,11 @@ html[data-theme="light"] .theme-toggle .icon-moon{display:none}
 .theme-card:hover{transform:translateY(-4px);border-color:rgba(120,170,220,.3)}
 .ico{
   display:inline-flex;align-items:center;justify-content:center;
-  width:46px;height:46px;border-radius:11px;font-size:1.2rem;
+  width:46px;height:46px;border-radius:11px;
   background:rgba(120,180,230,.08);border:1px solid var(--line);
   color:var(--accent);margin-bottom:24px;
 }
+.ico svg{width:24px;height:24px}
 .theme-card h3{font-family:var(--display);font-weight:700;font-size:1.2rem;margin-bottom:12px;letter-spacing:-.01em}
 .theme-card p{color:var(--muted);font-size:.95rem}
 
