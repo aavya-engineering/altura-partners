@@ -8,7 +8,12 @@
 /* ─── Global typography ─── */
 :root {
   --font-body: Helvetica, Arial, sans-serif;
-  --font-heading: 'Boldonse', sans-serif;
+  /* Figma: big headings = Humanist 521 Ultra -> Mulish 900 substitute */
+  --font-heading: 'Mulish', 'Arial Black', Helvetica, sans-serif;
+  /* Figma: card sub-titles + primary-focus banner = Boldonse */
+  --font-title: 'Boldonse', sans-serif;
+  /* Figma: nav + buttons = Inter */
+  --font-nav: 'Inter', Helvetica, Arial, sans-serif;
 }
 
 html,
@@ -16,37 +21,39 @@ body {
   font-family: var(--font-body);
 }
 
+/* Big headings — Humanist 521 Ultra (Mulish 900). !important to beat Tailwind CDN utilities */
 h1,
 h2,
-h3.font-display,
 .font-display,
 .hero-heading,
 .footer-col-heading {
-  font-family: var(--font-heading);
-  font-weight: 400;
+  font-family: var(--font-heading) !important;
+  font-weight: 900 !important;
 }
 
-/* Boldonse only ships one weight — prevent faux-bold from Tailwind utilities */
-.font-display.font-bold,
-.font-display.font-semibold,
-.hero-heading.font-bold,
-h1.font-bold,
-h2.font-bold,
-h3.font-display.font-bold,
-h3.font-display.font-semibold {
-  font-weight: 400;
-}
-
-/* Section headings — Boldonse needs extra line-height (hero excluded) */
-h2.font-display,
+/* Sub-titles + primary-focus banner — Boldonse (ships a single weight) */
+.advantage-title,
+.focus-card h3,
+.opportunity-card h4,
 h3.font-display {
-  line-height: 1.4;
+  font-family: var(--font-title) !important;
+  font-weight: 400 !important;
+}
+
+/* Heading line-height (Mulish is tighter than Boldonse) */
+.hero-heading {
+  line-height: 1.18 !important;
+}
+h2.font-display {
+  line-height: 1.12;
+}
+h3.font-display {
+  line-height: 1.3;
 }
 
 @media (max-width: 767px) {
-  h2.font-display,
-  h3.font-display {
-    line-height: 1.45;
+  h2.font-display {
+    line-height: 1.18;
   }
 }
 
@@ -194,9 +201,9 @@ html:not(.dark) .site-footer .site-logo-wordmark--footer {
 
 .nav-link {
   display: block;
-  font-family: var(--font-body);
+  font-family: var(--font-nav);
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 600;
   font-style: normal;
   line-height: 1;
   letter-spacing: 0;
@@ -233,9 +240,9 @@ html:not(.dark) .site-footer .site-logo-wordmark--footer {
   border-radius: 12px;
   background: transparent;
   color: #ffffff;
-  font-family: var(--font-body);
+  font-family: var(--font-nav);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -277,9 +284,9 @@ html:not(.dark) .site-footer .site-logo-wordmark--footer {
   border-radius: 12px;
   background: transparent;
   color: #ffffff;
-  font-family: var(--font-body);
+  font-family: var(--font-nav);
   font-size: 11px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 1;
   letter-spacing: 0.14em;
   text-transform: uppercase;
