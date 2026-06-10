@@ -57,6 +57,12 @@ h3.font-display {
   }
 }
 
+/* Figma: the gradient accent word is enlarged (~1.4x) within section headings (hero excluded) */
+h2 .text-gradient-accent {
+  font-size: 1.4em;
+  line-height: 0.9;
+}
+
 /* ─── Gradient accent text (Figma highlights) ─── */
 .text-gradient-accent {
   background: linear-gradient(90deg, #308A9B 0%, #BFDBE0 100%);
