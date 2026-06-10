@@ -12,8 +12,10 @@
   --accent:#7fd8ef;
   --accent-2:#4aa6d8;
   --maxw:1280px;
-  /* Figma: headings = Humanist 521 Ultra (900) -> Mulish 900 fallback; body = Helvetica */
+  /* Figma fonts: big headings = Humanist 521 Ultra (900) -> Mulish 900;
+     card/sub-titles = Boldonse (blocky display); body = Helvetica */
   --display:"Mulish", "Arial Black", "Helvetica Neue", Arial, sans-serif;
+  --title:"Boldonse", "Mulish", "Arial Black", sans-serif;
   --body:"Helvetica Neue", Helvetica, Arial, "Mulish", sans-serif;
 }
 
@@ -127,13 +129,16 @@ html[data-theme="light"] .theme-toggle .icon-moon{display:none}
 .pillar:first-child,.strat:first-child{padding-top:0}
 .pillar:last-child,.strat:last-child{border-bottom:none}
 .tick{display:block;width:34px;height:4px;border-radius:2px;background:var(--accent-2);margin-bottom:18px}
-.pillar h3,.strat h3{font-family:var(--display);font-weight:700;font-size:1.35rem;margin-bottom:12px;letter-spacing:-.01em}
+.pillar h3,.strat h3{font-family:var(--title);font-weight:400;font-size:1.02rem;line-height:1.35;margin-bottom:14px;letter-spacing:-.005em}
 .pillar p,.strat p{color:var(--muted);max-width:760px}
 
 /* ===== Themes grid ===== */
 .themes{background:var(--bg-deep)}
+/* section headings: base size; the accent (.grad) word is ~1.4x larger, per Figma */
+.sec-head{font-size:clamp(1.9rem,3vw,2.4rem);margin:6px 0 56px}
+.section .display .grad{font-size:1.4em;line-height:.9}
 .center-head{text-align:center;font-size:clamp(2rem,4.2vw,3rem);margin:6px 0 56px}
-.themes .eyebrow{display:block;text-align:center}
+.themes .eyebrow{display:block}
 .theme-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .theme-card{
   background:linear-gradient(160deg,#0f1d3a,#0b1730);
@@ -153,7 +158,7 @@ html[data-theme="light"] .theme-toggle .icon-moon{display:none}
   color:var(--accent);margin-bottom:24px;
 }
 .ico svg{width:24px;height:24px}
-.theme-card h3{font-family:var(--display);font-weight:700;font-size:1.2rem;margin-bottom:12px;letter-spacing:-.01em}
+.theme-card h3{font-family:var(--title);font-weight:400;font-size:.95rem;line-height:1.35;margin-bottom:14px;letter-spacing:-.005em}
 .theme-card p{color:var(--muted);font-size:.95rem}
 
 /* ===== Strategy section ===== */
@@ -169,14 +174,14 @@ html[data-theme="light"] .theme-toggle .icon-moon{display:none}
   box-shadow:0 20px 60px rgba(10,30,70,.4);
 }
 .focus-banner .eyebrow{margin-bottom:16px;color:var(--accent)}
-.focus-title{font-family:var(--display);font-weight:700;font-size:clamp(1.6rem,3.2vw,2.4rem);margin-bottom:18px;letter-spacing:-.01em}
-.focus-title .x{color:var(--accent);font-weight:500;margin:0 6px}
+.focus-title{font-family:var(--title);font-weight:400;font-size:clamp(1.1rem,2vw,1.4rem);line-height:1.3;margin-bottom:18px;letter-spacing:-.01em}
+.focus-title .x{color:var(--accent);margin:0 4px}
 .focus-banner p{color:var(--muted);max-width:880px}
 .opp-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .opp-card{
   background:var(--card);border:1px solid var(--line);border-radius:14px;padding:30px 32px;
 }
-.opp-card h4{font-family:var(--display);font-weight:700;font-size:1.15rem;margin-bottom:12px;color:var(--accent)}
+.opp-card h4{font-family:var(--title);font-weight:400;font-size:.92rem;line-height:1.35;margin-bottom:14px;color:var(--accent)}
 .opp-card p{color:var(--muted);font-size:.97rem}
 
 /* ===== CTA ===== */

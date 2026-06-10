@@ -1,0 +1,8 @@
+﻿Match section typography and alignment to Figma
+
+Verified existing sections against full Figma frame (175:2453) via API:
+- Card/sub-titles now use Boldonse (the blocky display face Figma uses),
+  not Mulish
+- Left-align the themes and opportunity headers (were centered)
+- Enlarge the accent word (~1.4x) within each section heading, per the
+  Figma type treatment
